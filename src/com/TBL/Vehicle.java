@@ -4,21 +4,21 @@ public class Vehicle {
     private String name;
     private String size;
     private int currdirection;
-    private int currspeed;
+    private float currspeed;
 
-    public Vehicle(String name, String size, int currdirection, int currspeed) {
+    public Vehicle(String name, String size) {
         this.name = name;
         this.size = size;
-        currdirection = currdirection;
-        currspeed = currspeed;
+        this.currdirection = 0;
+        this.currspeed = 0;
     }
 
     public void changeDirection(int degrees){
         this.currdirection+=degrees;
     }
 
-    public void changeSpeed(int speed){
-        this.currspeed+=speed;
+    public float changeSpeed(float speed){
+        return this.currspeed+=speed;
     }
 
     public void stop (){ this.currspeed=0;}
@@ -27,7 +27,7 @@ public class Vehicle {
         return currdirection;
     }
 
-    public int getSpeed() {
+    public float getSpeed() {
         return currspeed;
     }
 
